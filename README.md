@@ -1,8 +1,14 @@
 ## About
 
-Hi! I'm Siddhant, I'm a 3rd year computer science student who enjoys learning and building systems
+Hi! I'm Siddhant. I'm a 3rd-year computer science student who enjoys learning and building systems. 
 
-connect with me!
+My current obsession is everything inference, check out MiniServe    
+<a href="https://github.com/skcache/miniserve">
+  <img src="https://img.shields.io/badge/repo-view-0d1117?style=flat-square&logo=github&logoColor=white" />
+</a>
+
+
+connect with me! #opentowork
 
 <p align="center">
   <a href="mailto:skuwar@ucsd.edu">
@@ -13,7 +19,7 @@ connect with me!
     <img src="https://img.shields.io/badge/LinkedIn-Siddhant%20Kuwar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
 </p>
-
+<!--
 ## Current Builds
 
 
@@ -24,7 +30,7 @@ connect with me!
 </a>
 
 I'm exploring whether burnout can be detected before it happens,
-currently reading: <https://psycnet.apa.org/record/2007-10372-002> -->
+currently reading: <https://psycnet.apa.org/record/2007-10372-002> 
 
 project: MiniServe
 
@@ -39,6 +45,8 @@ building a personalized system that tracks everything I do and adapts to me
 project: Plywise
 
 attempting to open source the chess.com game analysis and adding personal intelligence
+
+-->
 
 <!-- ## Tech Stack
 
