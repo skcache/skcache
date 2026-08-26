@@ -1,6 +1,6 @@
 ## About
 
-Hi! I'm Siddhant. I'm a 3rd-year computer science student who enjoys learning and building systems. 
+Hi! I'm Siddhant, a 4th year computer science student who enjoys learning and building systems. 
 
 My current obsession is everything inference, check out MiniServe    
 <a href="https://github.com/skcache/miniserve">
@@ -11,8 +11,8 @@ My current obsession is everything inference, check out MiniServe
 connect with me! #opentowork
 
 <p align="center">
-  <a href="mailto:skuwar@ucsd.edu">
-    <img src="https://img.shields.io/badge/Email-skuwar@ucsd.edu-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  <a href="mailto:siddhankuwar116@gmail.com">
+    <img src="https://img.shields.io/badge/Email-siddhankuwar116@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
   &nbsp;
   <a href="https://www.linkedin.com/in/skuwar">
@@ -70,13 +70,3 @@ attempting to open source the chess.com game analysis and adding personal intell
   <img src="https://skillicons.dev/icons?i=react,figma,vercel&theme=dark" />
 </p> 
 
-## Pacman Commit Graph
-
-<p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/siddhantkuwar/siddhantkuwar/output/pacman-contribution-graph-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/siddhantkuwar/siddhantkuwar/output/pacman-contribution-graph.svg">
-    <img alt="Pac-Man eating GitHub contributions" src="https://raw.githubusercontent.com/siddhantkuwar/siddhantkuwar/output/pacman-contribution-graph-dark.svg">
-  </picture>
-</p>
--->
