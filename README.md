@@ -38,4 +38,4 @@ Inference runtimes, C++, systems performance, serving economics, AI infrastructu
 
 Outside code, mostly basketball and markets.
 
-[LinkedIn](https://www.linkedin.com/in/skuwar) · [X](https://x.com/skcache)
+[LinkedIn](https://www.linkedin.com/in/skuwar) · [X](https://x.com/skcache) · [Email](mailto:siddhankuwar116@gmail.com)
