@@ -2,19 +2,7 @@
 
 4th year CS @ UC San Diego. Most of my time right now goes into inference systems, C++, and building software I can actually explain end to end.
 
-```text
-model execution
-      ↓
-prefill / decode
-      ↓
-KV memory + scheduling
-      ↓
-kernels / device runtime
-      ↓
-serving + cost
-```
-
-That stack is where I want to get unusually good.
+I'm especially interested in the part of AI that starts after the model has already been trained: how inference runtimes execute work, how KV memory grows and moves, how requests get scheduled, where kernels actually matter, how hardware behavior leaks into latency, and how all of that turns into serving cost. I like following performance problems across those boundaries instead of treating each layer as somebody else's problem.
 
 ## [MiniServe](https://github.com/skcache/miniserve)
 
