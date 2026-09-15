@@ -1,48 +1,41 @@
 # Siddhant Kuwar
 
-4th year CS @ UC San Diego. Most of my time right now goes into inference systems, C++, and building software I can actually explain end to end.
+4th year CS @ UC San Diego.
 
-I'm especially interested in the part of AI that starts after the model has already been trained: how inference runtimes execute work, how KV memory grows and moves, how requests get scheduled, where kernels actually matter, how hardware behavior leaks into latency, and how all of that turns into serving cost. I like following performance problems across those boundaries instead of treating each layer as somebody else's problem.
+Lately I've been spending most of my time around inference systems and C++. I keep getting pulled toward the parts of the stack where behavior stops being obvious. KV memory, scheduling, batching, kernels, device behavior, latency, cost. Once I can see the path end to end, I usually want to keep going lower.
 
 ## [MiniServe](https://github.com/skcache/miniserve)
 
 A small LLM inference runtime for Apple Silicon.
 
-I started it because I wanted to understand the full path from model weights to generated tokens instead of treating inference as one opaque call.
+MiniServe started as a way to get past the high-level generation path and see what was actually happening during inference. The Python side gives me a reference implementation I can inspect and test against. The native side is moving into C++20 with MLX C++, with separate prefill and decode paths, KV caching, request state, batching, scheduling, and benchmarking.
 
-The current runtime work is around:
+I'm tracking TTFT, TPOT, throughput, tail latency, and memory while the runtime changes underneath it. The token path stays pinned so I can tell when a performance change also changed behavior.
 
-- prefill and decode as separate execution paths
-- KV-cache layout, growth, reuse, and memory cost
-- request state, batching, and scheduling
-- token-level parity between reference and native paths
-- TTFT, TPOT, throughput, P50/P99 latency, and memory measurements
-- C++20 + MLX C++ now, with Metal kernels later where profiling shows a real bottleneck
-
-I keep a slower reference implementation around so the faster path has something concrete to match. The useful part of this project is being able to change one layer and see exactly what happened to correctness, latency, or memory.
+Eventually I want the runtime to own more of the path itself. Model loading, memory management, scheduling, serving, and selected Metal work are all in scope. The repo is still early enough that the interesting part is watching the abstractions disappear one by one.
 
 ## [Cacheyard](https://github.com/skcache/cacheyard)
 
 A C++20 content-addressed artifact cache.
 
-This is where I'm getting deeper into systems fundamentals through something with real constraints: content hashing, storage semantics, ownership, TTL/eviction, TCP/HTTP serving, concurrency, observability, and eventually sharding / multi-process behavior.
+I'm using Cacheyard to get much sharper on systems fundamentals through something that has to deal with actual state and contention. Storage semantics, hashing, ownership, TTL and eviction, networking, concurrency, observability, and eventually sharding and multi-process behavior all show up naturally here.
 
-I'm building it in small pieces and keeping the invariants explicit before adding more moving parts. The point is to understand what the cache is doing under load, where contention shows up, and how the design changes as the system gets less toy-like.
+The implementation is still early. I care more about getting the invariants right now than racing toward a distributed architecture I don't understand well enough yet.
 
 ## Orvia Operations
 
-I'm building **Orvia Operations**, an AI-native operations system for inventory-heavy businesses: distributors, wholesalers, suppliers, warehouses, and similar businesses where a lot of work still happens through forms, spreadsheets, email, scanners, PDFs, and people remembering what to do next.
+I'm also building **Orvia Operations**, an AI-native operations system for inventory-heavy businesses.
 
-The product direction is to reduce how much software people have to operate manually. Orders, inventory movement, invoices, supplier messages, barcode scans, payments, and documents already produce useful signals. Orvia is being built to turn those signals into operational state, catch what changed, and move the workflow forward with as little manual input as possible.
+A lot of operational work still leaks through email, PDFs, barcode scans, supplier messages, invoices, spreadsheets, payments, and someone's memory. Orvia sits in that mess and tries to keep the system state current as those signals arrive.
 
-A lot of the work now is less "build another dashboard" and more figuring out where the system can reliably infer state, automate the boring path, and only pull a human in when judgment is actually needed.
+The interesting part for me is reducing how often someone has to stop what they're doing, open software, find the right screen, and explain to the system what already happened in the real world.
 
-## What I'm working toward
+I'm building this seriously and pushing it toward something we can put in front of accelerators in the next few months.
 
-I want to get very good at the systems and economics of inference: how model architecture, runtime behavior, memory, kernels, hardware, and serving policy all show up in latency and cost.
+## Current interests
 
-I also like product problems where the software can remove entire chunks of human workflow instead of making the workflow prettier.
+Inference runtimes, C++, systems performance, serving economics, and software that removes work instead of moving it into a nicer interface.
 
-Outside of code: basketball, markets, and whatever technical rabbit hole I managed to turn into a project that week.
+Outside code, mostly basketball and markets.
 
 [LinkedIn](https://www.linkedin.com/in/skuwar) · [X](https://x.com/skcache) · [Email](mailto:siddhankuwar116@gmail.com)
