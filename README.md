@@ -1,72 +1,49 @@
-## About
+# Siddhant Kuwar
 
-Hi! I'm Siddhant, a 4th year computer science student who enjoys learning and building systems. 
+CS @ UC San Diego.
 
-My current obsession is everything inference, check out MiniServe    
-<a href="https://github.com/skcache/miniserve">
-  <img src="https://img.shields.io/badge/repo-view-0d1117?style=flat-square&logo=github&logoColor=white" />
-</a>
+I like systems where the abstraction eventually stops being useful and I have to figure out what is actually happening underneath it.
 
+Right now I'm mostly working on **AI inference and systems**: model execution, memory, scheduling, kernels, serving, and the economics behind all of it.
 
-connect with me! #opentowork
+I don't care much about collecting frameworks. I care about knowing where the latency, memory, and money go.
 
-<p align="center">
-  <a href="mailto:siddhankuwar116@gmail.com">
-    <img src="https://img.shields.io/badge/Email-siddhankuwar116@gmail.com-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
-  </a>
-  &nbsp;
-  <a href="https://www.linkedin.com/in/skuwar">
-    <img src="https://img.shields.io/badge/LinkedIn-Siddhant%20Kuwar-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
-  </a>
-</p>
-<!--
-## Current Builds
+## Building
 
+### [MiniServe](https://github.com/skcache/miniserve)
 
+A small LLM inference runtime for Apple Silicon.
 
-<!-- project: Battry
-<a href="https://github.com/siddhantkuwar/battry-app">
-  <img src="https://img.shields.io/badge/repo-view-0d1117?style=flat-square&logo=github&logoColor=white" />
-</a>
+I'm building it from a readable Python reference toward a C++20 runtime, then dropping into Metal where profiling says it is worth it.
 
-I'm exploring whether burnout can be detected before it happens,
-currently reading: <https://psycnet.apa.org/record/2007-10372-002> 
+Current work includes:
 
-project: MiniServe
+- explicit prefill / decode paths
+- KV-cache design and memory behavior
+- batching and request scheduling
+- token-parity correctness checks
+- TTFT, TPOT, throughput, and P50/P99 latency measurements
 
-local LM inference engine on Apple silicon
+The point is not to wrap another serving library. I want to be able to trace one token from the model file to streamed output and explain the runtime decisions along the way.
 
+### [Cacheyard](https://github.com/skcache/cacheyard)
 
-project: Daymark
+A C++20 content-addressed artifact cache I'm building to get deeper into storage, networking, concurrency, and distributed systems.
 
-building a personalized system that tracks everything I do and adapts to me
+I'm keeping the project deliberately low-level: define the invariants first, then build the storage and serving path instead of hiding the hard parts behind libraries.
 
+### Orvia
 
-project: Plywise
+AI-native operations software for inventory-heavy businesses.
 
-attempting to open source the chess.com game analysis and adding personal intelligence
+The idea is simple: operational software should need less explicit input. The system should observe the signals a business already produces, reconstruct state, detect what changed, and either act or ask for the smallest possible human decision.
 
--->
+## What I'm trying to get good at
 
-<!-- ## Tech Stack
+Cross-layer systems work: models → runtimes → kernels → hardware → fleets.
 
-<h4>Languages</h4>
-<p>
-  <img src="https://skillicons.dev/icons?i=python,java,c,js,ts&theme=dark" />
-</p>
+Long term, I want to understand how to make increasingly capable models economically deployable on finite hardware.
 
-<h4>AI / ML</h4>
-<p>
-  <img src="https://skillicons.dev/icons?i=pytorch,sklearn,opencv&theme=dark" />
-</p>
+Outside code: basketball, markets, and spending too much time pulling apart systems that were working perfectly fine before I got curious.
 
-<h4>Backend</h4>
-<p>
-  <img src="https://skillicons.dev/icons?i=fastapi,nodejs,supabase,postgres,docker,linux,git&theme=dark" />
-</p>
-
-<h4>Frontend</h4>
-<p>
-  <img src="https://skillicons.dev/icons?i=react,figma,vercel&theme=dark" />
-</p> 
-
+[LinkedIn](https://www.linkedin.com/in/skuwar) · [X](https://x.com/skcache) · [Email](mailto:siddhankuwar116@gmail.com)
