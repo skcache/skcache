@@ -1,31 +1,41 @@
 # Siddhant Kuwar
 
-4th year CS @ UC San Diego.
+4th year CS @ UC San Diego. Mostly working down the inference stack right now.
 
-I'm mostly interested in inference systems right now. The part I care about is everything between "model loaded" and "token returned": execution, memory, scheduling, kernels, serving, and what all of that costs.
+```text
+models
+  ↓
+runtime
+  ↓
+memory + scheduling
+  ↓
+kernels
+  ↓
+hardware
+  ↓
+serving cost
+```
 
 ## [MiniServe](https://github.com/skcache/miniserve)
 
-I started MiniServe because calling a generation API stopped being satisfying. I wanted to know what was actually happening underneath it.
+LLM inference runtime for Apple Silicon.
 
-It's a small LLM inference runtime for Apple Silicon. I'm using a Python reference to lock down behavior, then rebuilding the path in C++20. Current work is around prefill/decode, KV caching, batching, request scheduling, token parity, and latency measurement. Metal comes later, if profiling gives me a reason to write the kernel.
+Python reference first, then C++20. I'm working through prefill/decode, KV-cache behavior, batching, scheduling, and the measurements around them: TTFT, TPOT, throughput, P50/P99, memory.
 
-The end goal is simple: I should be able to trace one token from the model file to streamed output and explain the runtime decisions along the way.
+The reference path pins token behavior before I start changing the runtime underneath it. Metal comes after profiling tells me where it is actually worth touching.
 
 ## [Cacheyard](https://github.com/skcache/cacheyard)
 
-A C++20 content-addressed artifact cache.
+C++20 content-addressed artifact cache.
 
-This one is partly me forcing myself to get much better at C++ and systems fundamentals. I'm working through storage invariants, hashing, networking, concurrency, and eventually distributed behavior without abstracting the interesting parts away too early.
+I'm using it to get much better at the systems pieces I don't want to hand-wave: storage invariants, hashing, ownership, networking, concurrency, and eventually distributed behavior.
 
 ## Orvia
 
-I'm also building operations software for inventory-heavy businesses.
+Operations software for inventory-heavy businesses. I'm exploring how much explicit software interaction can disappear if the system can reconstruct state from the signals the business already produces.
 
-The part I'm interested in is reducing how much people have to operate the software itself. A business already produces a ton of signals. Orders come in, inventory moves, invoices get created, suppliers respond, payments land. I want the system to reconstruct state from that activity and only interrupt someone when it actually needs a decision.
+Lately I've been spending most of my time on inference, C++, systems performance, and the economics of running models on finite hardware.
 
-Long term, the thing I'm chasing is pretty consistent: understand the full path from models to runtimes to kernels to hardware, then get good at finding where performance and cost are being wasted.
-
-Outside of code: basketball, markets, and whatever systems rabbit hole I got stuck in that week.
+Basketball and markets usually eat whatever time is left.
 
 [LinkedIn](https://www.linkedin.com/in/skuwar) · [X](https://x.com/skcache) · [Email](mailto:siddhankuwar116@gmail.com)
