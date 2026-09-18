@@ -32,6 +32,46 @@ The system works across orders, invoices, supplier messages, barcode scans, PDFs
 
 Current work spans inventory, orders, invoicing, supplier workflows, document ingestion, barcode input, and automation around operational state.
 
+## Other things I've built
+
+### [Jev Traffic Sim](https://github.com/skcache/jevtrafficsim)
+
+A mock city traffic simulator I’m building to test Jev in a real-world control scenario and see how it compares against deterministic control.
+
+The city runs three controllers over the same traffic environment.
+
+1. Fixed controller
+2. Deterministic adaptive controller with more traffic state
+3. Jev
+
+You can change traffic conditions and compare how they behave under congestion, queue buildup, starvation, and corridor flow.
+
+### [Plywise](https://github.com/skcache/plywise)
+
+Open-source chess analysis tool with a C++ backend and React frontend.
+
+Imports Chess.com games or PGNs, runs Stockfish, and supports review, variations, and practice data.
+
+### [ApplyRN](https://github.com/skcache/applyrn)
+
+Job watcher for internships and early-career roles.
+
+Polls 154 company job boards across Greenhouse, Ashby, Lever, SmartRecruiters, Workday, and Taleo, then sends matching roles to Telegram.
+
+### [EDN](https://github.com/skcache/edn)
+
+A coding-agent skill that keeps a local engineering notebook in sync with the repo.
+
+Tracks architecture, components, dependencies, data flow, tradeoffs, failure modes, and security boundaries while the code changes.
+
+### [AirDeck](https://github.com/skcache/airdeck)
+
+Startup technical task for a macOS webcam gesture controller with hosted vision inference and native hotkey execution.
+
+### [Battry](https://github.com/skcache/battry-app)
+
+Prototype for a larger idea around turning daily logs into structured energy data. Back burner for now.
+
 ## Current interests
 
 Inference runtimes, C++, systems performance, serving economics, AI infrastructure, and operational software.
