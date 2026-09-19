@@ -4,6 +4,8 @@
 
 Most of my current work is around inference systems and C++. Lately that has meant KV caches, decode paths, schedulers, latency measurements, memory behavior, and learning runtime.
 
+[LinkedIn](https://www.linkedin.com/in/skuwar) · [X](https://x.com/skcache) · [Email](mailto:siddhankuwar116@gmail.com)
+
 ## [MiniServe](https://github.com/skcache/miniserve)
 
 MiniServe is a small LLM inference runtime for Apple Silicon.
@@ -38,11 +40,7 @@ Current work spans inventory, orders, invoicing, supplier workflows, document in
 
 A mock city traffic simulator I’m building to test Jev in a real-world control scenario and see how it compares against deterministic control.
 
-The city runs three controllers over the same traffic environment.
-
-1. Fixed controller
-2. Deterministic adaptive controller with more traffic state
-3. Jev
+The city runs three controllers over the same traffic environment: a fixed controller, a deterministic adaptive controller with more traffic state, and Jev
 
 You can change traffic conditions and compare how they behave under congestion, queue buildup, starvation, and corridor flow.
 
@@ -77,5 +75,3 @@ Prototype for a larger idea around turning daily logs into structured energy dat
 Inference runtimes, C++, systems performance, serving economics, AI infrastructure, and operational software.
 
 Outside code, mostly basketball and markets.
-
-[LinkedIn](https://www.linkedin.com/in/skuwar) · [X](https://x.com/skcache) · [Email](mailto:siddhankuwar116@gmail.com)
