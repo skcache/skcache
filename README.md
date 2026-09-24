@@ -2,82 +2,88 @@
 
 4th year CS @ UC San Diego.
 
-Most of my current work is around inference systems and C++. Lately that has meant KV caches, decode paths, schedulers, latency measurements, memory behavior, and learning runtime.
+Most of what I’m working on right now is around inference systems, C++, performance, and just getting better at understanding what actually happens below the API layer.
+
+I like building stuff where I can measure what changed instead of just saying it got better.
 
 [LinkedIn](https://www.linkedin.com/in/skuwar) · [X](https://x.com/skcache) · [Email](mailto:siddhankuwar116@gmail.com)
 
 ## [MiniServe](https://github.com/skcache/miniserve)
 
-MiniServe is a small LLM inference runtime for Apple Silicon.
+Probably the project I care about the most right now.
 
-The Python runtime handles the reference path for attention, generation, token selection, stopping behavior, and reproducible token outputs. The native runtime is being built in C++20 with MLX C++.
+MiniServe is a small LLM inference runtime for Apple Silicon. I started with a Python reference implementation so I could actually understand attention, generation, token selection, stopping, all that stuff, and now I’m moving more of it into C++ with MLX.
 
-Current work is focused on prefill and decode, KV caching, request state, batching, scheduling, and benchmarking.
+Right now I’m mostly working on prefill, decode, KV caching, request state, batching, scheduling, and benchmarking.
 
-I track TTFT, TPOT, throughput, P50/P99 latency, and memory while changing the runtime. Token outputs are pinned against the reference implementation for correctness.
+I track TTFT, TPOT, throughput, tail latency, memory, whatever is useful for the thing I’m changing, and I keep token outputs pinned against the reference implementation so I know I didn’t just make it faster and wrong.
 
-Longer term, I want more of the inference path inside MiniServe, including model loading, memory management, serving, and Metal kernels.
+Long term I want to push more of the inference path into it, especially memory management, serving, and eventually Metal kernels.
 
 ## [Cacheyard](https://github.com/skcache/cacheyard)
 
-Cacheyard is a C++20 content-addressed artifact cache.
+C++20 content-addressed artifact cache.
 
-I'm working through storage semantics, hashing, ownership, TTL, eviction, networking, concurrency, observability, and eventually sharding and multi-process behavior.
+This one is mostly me forcing myself to learn systems properly by building the pieces instead of reading about them forever.
 
-I'm using the project to learn C++ and systems properly through implementation.
+So far that means hashing, ownership, TTL, eviction, networking, concurrency, observability, and eventually sharding / multi-process stuff.
 
 ## Orvia Operations
 
-I'm building **Orvia Operations**, an AI-native operations system for inventory-heavy businesses.
+This is the product I’m building.
 
-The system works across orders, invoices, supplier messages, barcode scans, PDFs, payments, inventory movement, and the state changes connecting them.
+Orvia is an operations system for inventory-heavy businesses, so suppliers, wholesalers, warehouses, that kind of thing.
 
-Current work spans inventory, orders, invoicing, supplier workflows, document ingestion, barcode input, and automation around operational state.
+The main idea is that people running these businesses already create a ton of signals through orders, invoices, emails, scans, PDFs, payments, inventory movement etc, and the software should understand as much of that as possible without making them manually enter everything again.
 
-## Other things I've built
+Right now I’m working across inventory, orders, invoicing, supplier workflows, barcode input, document ingestion, and automating more of the state changes between all of it.
+
+## Some other stuff
 
 ### [Jev Traffic Sim](https://github.com/skcache/jevtrafficsim)
 
-A mock city traffic simulator I’m building to test Jev in a real-world control scenario and see how it compares against deterministic control.
+A traffic simulator I built to test Jev in something closer to a real control problem.
 
-The city runs three controllers over the same traffic environment: a fixed controller, a deterministic adaptive controller with more traffic state, and Jev
-
-You can change traffic conditions and compare how they behave under congestion, queue buildup, starvation, and corridor flow.
+It runs fixed control, deterministic adaptive control, and Jev over the same city so you can mess with congestion, queues, starvation, corridor flow, accidents, closures, rain, whatever, and see how the controllers behave.
 
 ### [Plywise](https://github.com/skcache/plywise)
 
 Open-source chess analysis tool with a C++ backend and React frontend.
 
-Imports Chess.com games or PGNs, runs Stockfish, and supports review, variations, and practice data.
+Imports Chess.com games or PGNs, runs Stockfish, and supports review, variations, and practice.
 
 ### [ApplyRN](https://github.com/skcache/applyrn)
 
-Job watcher for internships and early-career roles.
+Job watcher I built because manually checking company boards is miserable.
 
 Polls 154 company job boards across Greenhouse, Ashby, Lever, SmartRecruiters, Workday, and Taleo, then sends matching roles to Telegram.
 
 ### [PR Notes](https://github.com/skcache/prnotes)
 
-A coding-agent skill for writing concise pull request descriptions from the actual diff.
+Small coding-agent skill for writing better PR descriptions from the actual diff.
 
-Uses before / after evidence, small flow diagrams when useful, implementation details that matter for review, and verification tied to the changed path.
+It can pull in before / after evidence, add a small flow diagram when it actually helps, and keep the note focused on what changed and how it was verified.
 
 ### [EDN](https://github.com/skcache/edn)
 
-A coding-agent skill that keeps a local engineering notebook in sync with the repo.
+Another coding-agent skill, this one keeps a local engineering notebook synced with the repo while you work.
 
-Tracks architecture, components, dependencies, data flow, tradeoffs, failure modes, and security boundaries while the code changes.
+Mostly tracks architecture, components, dependencies, data flow, tradeoffs, failure modes, security boundaries, stuff that usually ends up scattered across your head and random notes.
 
 ### [AirDeck](https://github.com/skcache/airdeck)
 
-Startup technical task for a macOS webcam gesture controller with hosted vision inference and native hotkey execution.
+macOS webcam gesture controller I built for a startup technical task.
+
+Hosted vision inference on one side, native hotkey execution on the other.
 
 ### [Battry](https://github.com/skcache/battry-app)
 
-Prototype for a larger idea around turning daily logs into structured energy data. Back burner for now.
+Prototype around turning daily logs into structured energy data.
 
-## Current interests
+This one is on the back burner right now.
 
-Inference runtimes, C++, systems performance, serving economics, AI infrastructure, and operational software.
+## What I’m into right now
+
+Inference runtimes, C++, systems performance, AI infrastructure, serving economics, operational software.
 
 Outside code, mostly basketball and markets.
