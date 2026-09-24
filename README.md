@@ -56,6 +56,12 @@ Job watcher for internships and early-career roles.
 
 Polls 154 company job boards across Greenhouse, Ashby, Lever, SmartRecruiters, Workday, and Taleo, then sends matching roles to Telegram.
 
+### [PR Notes](https://github.com/skcache/prnotes)
+
+A coding-agent skill for writing concise pull request descriptions from the actual diff.
+
+Uses before / after evidence, small flow diagrams when useful, implementation details that matter for review, and verification tied to the changed path.
+
 ### [EDN](https://github.com/skcache/edn)
 
 A coding-agent skill that keeps a local engineering notebook in sync with the repo.
