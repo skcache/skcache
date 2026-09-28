@@ -1,4 +1,4 @@
-# Siddhant Kuwar
+# Hey, I'm Siddhant!
 
 4th year CS @ UC San Diego.
 
