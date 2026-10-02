@@ -6,7 +6,7 @@ Most of what I’m working on right now is around inference systems, C++, perfor
 
 I like building stuff where I can measure what changed instead of just saying it got better.
 
-[LinkedIn](https://www.linkedin.com/in/skuwar) · [X](https://x.com/skcache) · [Email](mailto:siddhankuwar116@gmail.com)
+[LinkedIn](https://www.linkedin.com/in/skuwar) · [X](https://x.com/skcache) · [Email](mailto:siddhankuwar116@gmail.com) · [Website](https://skx.si)
 
 ## [MiniServe](https://github.com/skcache/miniserve)
 
