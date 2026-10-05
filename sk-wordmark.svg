@@ -1,57 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="390" height="155" viewBox="0 0 390 155" role="img" aria-labelledby="title desc">
-  <title id="title">Animated ASCII SK wordmark</title>
-  <desc id="desc">The letters SK render as ASCII text, then receive a subtle left-to-right scan every ten seconds.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="326" height="171" viewBox="0 0 326.4 171.4" role="img" aria-labelledby="title desc">
+<title id="title">Animated ASCII SK wordmark</title>
+<desc id="desc">A dense ASCII SK wordmark reveals left to right, then receives a subtle scan every ten seconds.</desc>
+<!-- Visual direction inspired by AVIVASHISHTA29's animated ASCII wordmark; implementation here is custom for SK. -->
+<style>
+  .base { fill: #57606a; }
+  .bright { fill: #24292f; }
+  .cursor { fill: #24292f; opacity: .75; }
+  @media (prefers-color-scheme: dark) {
+    .base { fill: #8b949e; }
+    .bright { fill: #f0f6fc; }
+    .cursor { fill: #f0f6fc; opacity: .7; }
+  }
+</style>
+<defs>
+  <clipPath id="reveal">
+    <rect x="12" y="0" width="0" height="171.4">
+      <animate attributeName="width"
+               calcMode="discrete"
+               values="0.0;7.2;14.4;21.6;28.8;36.0;43.2;50.4;57.6;64.8;72.0;79.2;86.4;93.6;100.8;108.0;115.2;122.4;129.6;136.8;144.0;151.2;158.4;165.6;172.8;180.0;187.2;194.4;201.6;208.8;216.0;223.2;230.4;237.6;244.8;252.0;259.2;266.4;273.6;280.8;288.0;295.2;302.4"
+               keyTimes="0.00000;0.02381;0.04762;0.07143;0.09524;0.11905;0.14286;0.16667;0.19048;0.21429;0.23810;0.26190;0.28571;0.30952;0.33333;0.35714;0.38095;0.40476;0.42857;0.45238;0.47619;0.50000;0.52381;0.54762;0.57143;0.59524;0.61905;0.64286;0.66667;0.69048;0.71429;0.73810;0.76190;0.78571;0.80952;0.83333;0.85714;0.88095;0.90476;0.92857;0.95238;0.97619;1.00000"
+               dur="1.18s"
+               fill="freeze"/>
+    </rect>
+  </clipPath>
+  <linearGradient id="scanGradient" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="black"/>
+    <stop offset=".30" stop-color="black"/>
+    <stop offset=".50" stop-color="white"/>
+    <stop offset=".70" stop-color="black"/>
+    <stop offset="1" stop-color="black"/>
+  </linearGradient>
+  <mask id="scanMask" maskUnits="userSpaceOnUse" x="0" y="0" width="326.4" height="171.4">
+    <rect x="-78" y="0" width="78" height="171.4" fill="url(#scanGradient)">
+      <animate attributeName="x"
+               values="-78;326.4;326.4"
+               keyTimes="0;.13;1"
+               begin="2.8s"
+               dur="10s"
+               repeatCount="indefinite"/>
+    </rect>
+  </mask>
+</defs>
 
-  <style>
-    .ink { fill: #57606a; }
-    .shine { fill: #24292f; opacity: .10; }
-    @media (prefers-color-scheme: dark) {
-      .ink { fill: #c9d1d9; }
-      .shine { fill: #ffffff; opacity: .16; }
-    }
-  </style>
-
-  <defs>
-    <clipPath id="line1"><rect x="0" y="0" width="0" height="32"><animate attributeName="width" from="0" to="390" begin="0s" dur=".72s" fill="freeze"/></rect></clipPath>
-    <clipPath id="line2"><rect x="0" y="30" width="0" height="32"><animate attributeName="width" from="0" to="390" begin=".11s" dur=".72s" fill="freeze"/></rect></clipPath>
-    <clipPath id="line3"><rect x="0" y="60" width="0" height="32"><animate attributeName="width" from="0" to="390" begin=".22s" dur=".72s" fill="freeze"/></rect></clipPath>
-    <clipPath id="line4"><rect x="0" y="90" width="0" height="32"><animate attributeName="width" from="0" to="390" begin=".33s" dur=".72s" fill="freeze"/></rect></clipPath>
-    <clipPath id="line5"><rect x="0" y="120" width="0" height="32"><animate attributeName="width" from="0" to="390" begin=".44s" dur=".72s" fill="freeze"/></rect></clipPath>
-
-    <linearGradient id="scanGradient" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="white" stop-opacity="0"/>
-      <stop offset=".38" stop-color="white" stop-opacity=".15"/>
-      <stop offset=".52" stop-color="white" stop-opacity=".9"/>
-      <stop offset=".66" stop-color="white" stop-opacity=".15"/>
-      <stop offset="1" stop-color="white" stop-opacity="0"/>
-    </linearGradient>
-
-    <mask id="scanMask" maskUnits="userSpaceOnUse" x="0" y="0" width="390" height="155">
-      <rect x="-90" y="0" width="90" height="155" fill="url(#scanGradient)">
-        <animate attributeName="x"
-                 values="-90;390;390"
-                 keyTimes="0;.13;1"
-                 begin="2.3s"
-                 dur="10s"
-                 repeatCount="indefinite"/>
-      </rect>
-    </mask>
-  </defs>
-
-  <g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace"
-     font-size="25" font-weight="600" xml:space="preserve">
-    <text class="ink" x="26" y="27" clip-path="url(#line1)">   _____      __ __</text>
-    <text class="ink" x="26" y="57" clip-path="url(#line2)">  / ___/     / //_/</text>
-    <text class="ink" x="26" y="87" clip-path="url(#line3)">  \__ \     / ,&lt;</text>
-    <text class="ink" x="26" y="117" clip-path="url(#line4)"> ___/ /    / /| |</text>
-    <text class="ink" x="26" y="147" clip-path="url(#line5)">/____/    /_/ |_|</text>
-
-    <g class="shine" mask="url(#scanMask)">
-      <text x="26" y="27">   _____      __ __</text>
-      <text x="26" y="57">  / ___/     / //_/</text>
-      <text x="26" y="87">  \__ \     / ,&lt;</text>
-      <text x="26" y="117"> ___/ /    / /| |</text>
-      <text x="26" y="147">/____/    /_/ |_|</text>
-    </g>
+<g font-family="ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace"
+   font-size="11.0" font-weight="600" clip-path="url(#reveal)">
+  <text class="base" xml:space="preserve" x="12" y="18.7" textLength="302.4" lengthAdjust="spacing">  ccSSSSSSSSSSSSS   **SSSSSS   ***ssssssss</text><text class="base" xml:space="preserve" x="12" y="30.5" textLength="302.4" lengthAdjust="spacing">ccSSSSSSSSSSSSSSS   ++SSSSSS ***ssssssss  </text><text class="base" xml:space="preserve" x="12" y="42.3" textLength="302.4" lengthAdjust="spacing">cSSSSSSSSSSSSSSSS   ++SSSSSs**sssssssss   </text><text class="base" xml:space="preserve" x="12" y="54.1" textLength="302.4" lengthAdjust="spacing">cSSSSSS       `:S   ++SSSSSs*ssssssss     </text><text class="base" xml:space="preserve" x="12" y="65.9" textLength="302.4" lengthAdjust="spacing">+SSSSSSSSS          ++SSSSSssssssss       </text><text class="base" xml:space="preserve" x="12" y="77.7" textLength="302.4" lengthAdjust="spacing">+SSSSSSSSSSSSSSS    ++SSSSSsssssss        </text><text class="base" xml:space="preserve" x="12" y="89.5" textLength="302.4" lengthAdjust="spacing"> :SSSSSSSSSSSSSSSS  ++SSSSssssssss        </text><text class="base" xml:space="preserve" x="12" y="101.3" textLength="302.4" lengthAdjust="spacing">   `SSSSSSSSSSSSSS  ++SSSSsssssssss       </text><text class="base" xml:space="preserve" x="12" y="113.1" textLength="302.4" lengthAdjust="spacing">          SSSSSSSSS ++SSSSsssssssssss     </text><text class="base" xml:space="preserve" x="12" y="124.9" textLength="302.4" lengthAdjust="spacing">+SSS      *cSSSSSSS ++SSSSss``sssssssss   </text><text class="base" xml:space="preserve" x="12" y="136.7" textLength="302.4" lengthAdjust="spacing">+SSSSSSSSSSSSSSSSS  ++SSSsss  `sssssssss  </text><text class="base" xml:space="preserve" x="12" y="148.5" textLength="302.4" lengthAdjust="spacing">+SSSSSSSSSSSSSSSSS  ++SSSsss   ``sssssssss</text><text class="base" xml:space="preserve" x="12" y="160.3" textLength="302.4" lengthAdjust="spacing"> SSSSSSSSSSSSSSS    ++SSSsss      `sssssss</text>
+  <g mask="url(#scanMask)">
+    <text class="bright" xml:space="preserve" x="12" y="18.7" textLength="302.4" lengthAdjust="spacing">  SS%%%%%%%%%%%%%   ss%%%%%%   sss########</text><text class="bright" xml:space="preserve" x="12" y="30.5" textLength="302.4" lengthAdjust="spacing">SS%%%%%%%%%%%%%%%   cc%%%%%% sss########  </text><text class="bright" xml:space="preserve" x="12" y="42.3" textLength="302.4" lengthAdjust="spacing">S%%%%%%%%%%%%%%%%   cc%%%%%#ss#########   </text><text class="bright" xml:space="preserve" x="12" y="54.1" textLength="302.4" lengthAdjust="spacing">S%%%%%%       -=%   cc%%%%%#s########     </text><text class="bright" xml:space="preserve" x="12" y="65.9" textLength="302.4" lengthAdjust="spacing">c%%%%%%%%%          cc%%%%%########       </text><text class="bright" xml:space="preserve" x="12" y="77.7" textLength="302.4" lengthAdjust="spacing">c%%%%%%%%%%%%%%%    cc%%%%%#######        </text><text class="bright" xml:space="preserve" x="12" y="89.5" textLength="302.4" lengthAdjust="spacing"> =%%%%%%%%%%%%%%%%  cc%%%%########        </text><text class="bright" xml:space="preserve" x="12" y="101.3" textLength="302.4" lengthAdjust="spacing">   -%%%%%%%%%%%%%%  cc%%%%#########       </text><text class="bright" xml:space="preserve" x="12" y="113.1" textLength="302.4" lengthAdjust="spacing">          %%%%%%%%% cc%%%%###########     </text><text class="bright" xml:space="preserve" x="12" y="124.9" textLength="302.4" lengthAdjust="spacing">c%%%      sS%%%%%%% cc%%%%##--#########   </text><text class="bright" xml:space="preserve" x="12" y="136.7" textLength="302.4" lengthAdjust="spacing">c%%%%%%%%%%%%%%%%%  cc%%%###  -#########  </text><text class="bright" xml:space="preserve" x="12" y="148.5" textLength="302.4" lengthAdjust="spacing">c%%%%%%%%%%%%%%%%%  cc%%%###   --#########</text><text class="bright" xml:space="preserve" x="12" y="160.3" textLength="302.4" lengthAdjust="spacing"> %%%%%%%%%%%%%%%    cc%%%###      -#######</text>
   </g>
+</g>
+
+<rect class="cursor" x="12" y="7" width="2.2" height="155.4">
+  <animate attributeName="x"
+           calcMode="discrete"
+           values="12.0;19.2;26.4;33.6;40.8;48.0;55.2;62.4;69.6;76.8;84.0;91.2;98.4;105.6;112.8;120.0;127.2;134.4;141.6;148.8;156.0;163.2;170.4;177.6;184.8;192.0;199.2;206.4;213.6;220.8;228.0;235.2;242.4;249.6;256.8;264.0;271.2;278.4;285.6;292.8;300.0;307.2;314.4"
+           keyTimes="0.00000;0.02381;0.04762;0.07143;0.09524;0.11905;0.14286;0.16667;0.19048;0.21429;0.23810;0.26190;0.28571;0.30952;0.33333;0.35714;0.38095;0.40476;0.42857;0.45238;0.47619;0.50000;0.52381;0.54762;0.57143;0.59524;0.61905;0.64286;0.66667;0.69048;0.71429;0.73810;0.76190;0.78571;0.80952;0.83333;0.85714;0.88095;0.90476;0.92857;0.95238;0.97619;1.00000"
+           dur="1.18s"
+           fill="freeze"/>
+  <animate attributeName="opacity"
+           values=".72;.72;0"
+           keyTimes="0;.96;1"
+           dur="1.28s"
+           fill="freeze"/>
+</rect>
 </svg>
