@@ -1,6 +1,6 @@
 # Hey, I'm Siddhant
 
-<img align="right" src="./sk-wordmark-v2.svg" width="315" alt="Animated ASCII SK wordmark" />
+<img align="right" src="./sk-wordmark-v3.svg" width="315" alt="Animated ASCII SK wordmark" />
 
 4th year CS @ UC San Diego.
 
