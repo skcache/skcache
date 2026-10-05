@@ -1,16 +1,16 @@
 # Hey, I'm Siddhant
 
-4th year CS @ UC San Diego.
+<img align="right" src="./sk-wordmark.svg" width="315" alt="Animated ASCII SK wordmark" />
 
-<p align="center">
-  <img src="./sk-wordmark.svg" width="390" alt="Animated ASCII SK wordmark" />
-</p>
+4th year CS @ UC San Diego.
 
 I’m mostly interested in inference systems, C++, performance, and the systems underneath modern AI workloads.
 
 A lot of what I build comes from wanting to understand something properly by implementing it, measuring it, and then pushing it further.
 
 [LinkedIn](https://www.linkedin.com/in/skuwar) · [X](https://x.com/skcache) · [Email](mailto:siddhankuwar116@gmail.com) · [Website](https://skx.si)
+
+<br clear="right" />
 
 ## [MiniServe](https://github.com/skcache/miniserve)
 
