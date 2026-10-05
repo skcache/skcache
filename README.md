@@ -2,6 +2,10 @@
 
 4th year CS @ UC San Diego.
 
+<p align="center">
+  <img src="./sk-wordmark.svg" width="390" alt="Animated ASCII SK wordmark" />
+</p>
+
 I’m mostly interested in inference systems, C++, performance, and the systems underneath modern AI workloads.
 
 A lot of what I build comes from wanting to understand something properly by implementing it, measuring it, and then pushing it further.
